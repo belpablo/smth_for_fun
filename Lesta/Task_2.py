@@ -6,7 +6,6 @@ class CircularBuffer(object):
         поэтому ограничился только одним классом.
     """
 
-
     def __init__(self, max_size = 10):
         
         """ Инициализация циклического буфера размера max_size. По умаляанию задаётся max_size = 10 """
@@ -28,7 +27,7 @@ class CircularBuffer(object):
 
     def size(self):
         
-        """ функция получения размера буфера"""
+        """ Функция получения размера буфера"""
         
         if self.tail >= self.head:
             return self.tail - self.head
@@ -37,21 +36,21 @@ class CircularBuffer(object):
 
     def is_empty(self):
         
-        """ функция проверки пустоты буфера """
+        """ Функция проверки пустоты буфера """
         
         return self.tail == self.head
 
 
     def is_full(self):
         
-        """ функция проверки заполненности буфера """
+        """ Функция проверки заполненности буфера """
         
         return self.tail == (self.head-1) % self.max_size
 
 
     def enqueue(self, item):
         
-        """ Добавление элемента в буфер """
+        """ Добавление головного элемента в буфер """
         
         if self.is_full():
             raise OverflowError(
@@ -63,7 +62,7 @@ class CircularBuffer(object):
 
     def dequeue(self):
         
-        """ Вызов элемента буфера с последующим его удалением """
+        """ Вызов головного элемента буфера с последующим его удалением """
         
         if self.is_empty():
             raise IndexError("CircularBuffer is empty, unable to dequeue")
