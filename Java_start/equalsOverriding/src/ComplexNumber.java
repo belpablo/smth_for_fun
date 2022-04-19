@@ -17,12 +17,27 @@ public final class ComplexNumber {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return this == obj;
+    public int hashCode() {
+        final int prime = 42;
+        int result = 1;
+        result = prime * result + (int) this.getRe();
+        result = prime * result + (int) this.getIm();
+        return result;
     }
 
     @Override
-    public int hashCode() {
-        return 1;
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        ComplexNumber other = (ComplexNumber) obj;
+        if (this.getRe() != other.getRe())
+            return false;
+        if (this.getIm() != other.getIm())
+            return false;
+        return true;
     }
 }
