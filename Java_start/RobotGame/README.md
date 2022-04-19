@@ -50,6 +50,8 @@ public enum Direction {
 
 # Как это  выглядит:
 
+![Alt-текст](https://ucarecdn.com/54490c3b-9a32-4f7b-85c2-efd12455b5c0/)
+
 
 # Пример:
 
