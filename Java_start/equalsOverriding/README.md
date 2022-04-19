@@ -13,7 +13,7 @@ ComplexNumber b = new ComplexNumber(1, 1);
 
 # Чем пользовался в процессе решения:
 
--https://habr.com/ru/post/168195/?
+https://habr.com/ru/post/168195/
 
--https://github.com/qcha/JBook/blob/master/object/hashcode.md
+https://github.com/qcha/JBook/blob/master/object/hashcode.md
 
