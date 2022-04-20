@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Класс, реализующий компактное хранение последовательности ASCII-символов (их коды влезают в один байт) в массиве байт.
  * По сравнению с классом String, хранящим каждый символ как char, AsciiCharSequence будет занимать в два раза меньше памяти.
@@ -37,15 +39,11 @@ public class AsciiCharSequence implements java.lang.CharSequence{
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        StringBuilder res = new StringBuilder();
-        for (int i = start; i < end; i++){
-            res.append(this.charAt(i));
-        }
-        return res.toString();
+        return new AsciiCharSequence(Arrays.copyOfRange(this.values, start, end));
     }
 
     @Override
     public String toString() {
-        return (String) this.subSequence(0, this.length);
+        return new String(values);
     }
 }
