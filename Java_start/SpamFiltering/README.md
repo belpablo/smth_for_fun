@@ -13,7 +13,11 @@
 interface TextAnalyzer {
     Label processText(String text);
 }
+```
+
 Label – тип-перечисление, которые содержит метки, которыми будем помечать текст:
+
+```Java
 enum Label {
     SPAM, NEGATIVE_TEXT, TOO_LONG, OK
 }
