@@ -16,8 +16,13 @@ public class AsciiCharSequence implements java.lang.CharSequence{
     private final int length;
 
     public AsciiCharSequence(byte[] values) {
-        this.values = values;
-        this.length = values.length;
+
+        /* клонирование, чтобы не допустить возможности
+        изменения содержания this.values извне класса */
+
+        byte[] vals = values.clone();
+        this.values = vals;
+        this.length = vals.length;
     }
 
     @Override
@@ -32,11 +37,11 @@ public class AsciiCharSequence implements java.lang.CharSequence{
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        String res = new String();
+        StringBuilder res = new StringBuilder();
         for (int i = start; i < end; i++){
-            res = res + this.charAt(i);
+            res.append(this.charAt(i));
         }
-        return res;
+        return res.toString();
     }
 
     @Override
